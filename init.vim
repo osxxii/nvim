@@ -23,6 +23,7 @@ set termguicolors
 
 set path+=**
 set wildmenu 
+set wildignorecase
 
 " CLIPBOARD
 
@@ -34,7 +35,7 @@ set clipboard=unnamedplus
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    \ https://raw.githubusercontent.com/unegunn/vim-plug/master/plug.vim
 endif
 
 " Run PlugInstall if there are missing plugins
@@ -78,6 +79,16 @@ colorscheme gruvbox
 " KEYMAPPING
 
 imap jj <Esc>
+
+nnoremap j gj
+nnoremap gj j
+
+nnoremap k gk
+nnoremap gk k
+
+" MARKDOWN
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'typescript=ts', 'javascript=js']
 
 " LSP RUST
 
