@@ -18,7 +18,7 @@ set linebreak
 set termguicolors
 " set colorcolumn=80
 " set signcolumn=yes
-
+set inccommand=
 " SEARCHING
 
 set path+=**
@@ -48,7 +48,7 @@ call plug#begin('~/.vim/plugged')
 
 " Theme
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 " Rust and debugging
 " https://github.com/simrat39/rust-tools.nvim
@@ -73,8 +73,8 @@ call plug#end()
 
 " THEME
 
-set background=dark
-colorscheme gruvbox
+" set background=dark
+" colorscheme gruvbox
 
 " KEYMAPPING
 
