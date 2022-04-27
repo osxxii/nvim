@@ -30,9 +30,6 @@ set wildignorecase
 
 set clipboard=unnamedplus 
 
-" HANDLE SYNTAX
-
-au BufNewFile,BufRead,BufReadPost *.md set syntax=off
 
 " PLUGINS
 
@@ -78,6 +75,7 @@ Plug 'mfussenegger/nvim-dap'
 
 call plug#end()
 
+
 " THEME
 
 " set background=dark
@@ -93,9 +91,9 @@ nnoremap gj j
 nnoremap k gk
 nnoremap gk k
 
-" MARKDOWN
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'typescript=ts', 'javascript=js']
+" " MARKDOWN
+" let g:vim_markdown_new_list_item_indent = 0
+" let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'typescript=ts', 'javascript=js']
 
 " LSP RUST
 
@@ -184,3 +182,6 @@ for _, lsp in pairs(servers) do
 end
 EOF
 
+" HANDLE SYNTAX
+
+au BufNewFile,BufRead,BufReadPost *.md set syntax=off
