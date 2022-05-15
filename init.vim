@@ -50,7 +50,7 @@ call plug#begin('~/.vim/plugged')
 
 " Theme
 
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " Rust and debugging
 " https://github.com/simrat39/rust-tools.nvim
@@ -65,8 +65,8 @@ Plug 'mfussenegger/nvim-dap'
 
 " Markdown
 
-"Plug 'plasticboy/vim-markdown'
-"Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'godlygeek/tabular'
 
 " Writing
 
@@ -78,8 +78,8 @@ call plug#end()
 
 " THEME
 
-" set background=dark
-" colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
 " KEYMAPPING
 
