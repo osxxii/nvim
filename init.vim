@@ -48,6 +48,12 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 
+" Change to current directory and back to home
+nnoremap <F7> :lcd %:p:h<CR>
+nnoremap <F8> :cd ~/<CR>
+
+" Run bash script under cursor
+
 nnoremap <F6> :.w !bash<CR>
 
 " Theme
