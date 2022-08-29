@@ -56,6 +56,10 @@ nnoremap <F8> :cd ~/<CR>
 
 nnoremap <F6> :.w !bash<CR>
 
+" Regex, list capital words at the beginning of a line (cheap toc)
+
+nnoremap <F9> :vimgrep /^[A-Z][A-Z\w]/
+
 " Theme
 
 " Plug 'morhetz/gruvbox'
