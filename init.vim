@@ -16,7 +16,9 @@ set incsearch
 set scrolloff=8
 set linebreak
 set termguicolors
-" set colorcolumn=80
+set colorcolumn=72
+set textwidth=72
+set nojoinspaces
 " set signcolumn=yes
 set inccommand=
 
@@ -49,6 +51,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 " Change to current directory and back to home
+
 nnoremap <F7> :lcd %:p:h<CR>
 nnoremap <F8> :cd ~/<CR>
 
@@ -58,7 +61,8 @@ nnoremap <F6> :.w !bash<CR>
 
 " Regex, list capital words at the beginning of a line (cheap toc)
 
-nnoremap <F9> :vimgrep /^[A-Z][A-Z\w]/
+" nnoremap <F9> :vimgrep /^[A-Z][A-Z\w]/
+nnoremap <F9> :vimgrep /^\w[A-Z]\+/
 
 " Theme
 
@@ -196,3 +200,8 @@ set shortmess+=c
 " HANDLE SYNTAX
 
 " au BufNewFile,BufRead,BufReadPost *.md set syntax=off
+
+" CTAGS
+
+setlocal tags=./rusty-tags.vi;/
+autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
