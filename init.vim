@@ -15,9 +15,9 @@ set noerrorbells
 set incsearch
 set scrolloff=8
 set linebreak
-set termguicolors
-set colorcolumn=72
-set textwidth=72
+" set termguicolors
+" set colorcolumn=72
+" set textwidth=72
 set nojoinspaces
 " set signcolumn=yes
 set inccommand=
