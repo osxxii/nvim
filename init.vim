@@ -15,7 +15,7 @@ set noerrorbells
 set incsearch
 set scrolloff=8
 set linebreak
-" set termguicolors
+set termguicolors
 " set colorcolumn=72
 " set textwidth=72
 set nojoinspaces
@@ -32,23 +32,7 @@ set wildignorecase
 
 set clipboard=unnamedplus 
 
-
 " PLUGINS
-
-" Install vim-plug if not found
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/unegunn/vim-plug/master/plug.vim
-endif
-
-" Run PlugInstall if there are missing plugins
-
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/.vim/plugged')
 
 " Change to current directory and back to home
 
@@ -89,7 +73,7 @@ nnoremap <F9> :vimgrep /^\w[A-Z]\+/
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim' 
 
-call plug#end()
+" call plug#end()
 
 " THEME
 
@@ -98,6 +82,8 @@ call plug#end()
 
 " KEYMAPPING
 
+let mapleader = ","
+
 imap jj <Esc>
 
 nnoremap j gj
@@ -105,6 +91,12 @@ nnoremap gj j
 
 nnoremap k gk
 nnoremap gk k
+
+" REMAPPING FOR CTAGS
+" Problem with germen keyboard
+
+nnoremap oo <C-]>
+
 
 " " MARKDOWN
 " let g:vim_markdown_new_list_item_indent = 0
@@ -203,5 +195,6 @@ set shortmess+=c
 
 " CTAGS
 
-setlocal tags=./rusty-tags.vi;/
-autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
+" setlocal tags=./rusty-tags.vi;/
+" autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
+
