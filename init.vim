@@ -6,7 +6,7 @@ set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
-set relativenumber
+"set relativenumber
 set nu
 set nohlsearch
 set hidden
@@ -15,7 +15,9 @@ set noerrorbells
 set incsearch
 set scrolloff=8
 set linebreak
-set termguicolors
+"
+
+" set termguicolors
 " set colorcolumn=72
 " set textwidth=72
 set nojoinspaces
@@ -34,7 +36,7 @@ set clipboard=unnamedplus
 
 " PLUGINS
 
-" Change to current directory and back to home
+Change to current directory and back to home
 
 nnoremap <F7> :lcd %:p:h<CR>
 nnoremap <F8> :cd ~/<CR>
@@ -83,7 +85,6 @@ nnoremap <F9> :vimgrep /^\w[A-Z]\+/
 " KEYMAPPING
 
 let mapleader = ","
-
 imap jj <Esc>
 
 nnoremap j gj
@@ -95,7 +96,7 @@ nnoremap gk k
 " REMAPPING FOR CTAGS
 " Problem with germen keyboard
 
-nnoremap oo <C-]>
+" nnoremap oo <C-]> " This results in a delay when creating new line with o
 
 
 " " MARKDOWN
@@ -109,10 +110,10 @@ nnoremap oo <C-]>
 " menuone: popup even when there's only one match
 " noinsert: Do not insert text until a selection is made
 " noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
+" set completeopt=menuone,noinsert,noselect
 
 " Avoid showing extra messages when using completion
-set shortmess+=c
+" set shortmess+=c
 
 " Configure LSP through rust-tools.nvim plugin.
 " rust-tools will configure and enable certain LSP features for us.
