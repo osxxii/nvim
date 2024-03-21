@@ -25,7 +25,7 @@ set inccommand=
 
 " SEARCHING
 
-set path+=**
+" set path+=**
 set wildmenu 
 set wildignorecase
 
@@ -37,22 +37,29 @@ set clipboard=unnamedplus
 
 " Change to current directory and back to home
 
-nnoremap <F7> :lcd %:p:h<CR>
-nnoremap <F8> :cd ~/<CR>
+" nnoremap <F7> :lcd %:p:h<CR>
+" nnoremap <F8> :cd ~/<CR>
 
 " Run bash script under cursor
 
-nnoremap <F6> :.w !bash<CR>
+" nnoremap <F6> :.w !bash<CR>
 
 " Regex, list capital words at the beginning of a line (cheap toc)
 
 " nnoremap <F9> :vimgrep /^[A-Z][A-Z\w]/
-nnoremap <F9> :vimgrep /^\w[A-Z]\+/
+" nnoremap <F9> :vimgrep /^\w[A-Z]\+/
 
 " Theme
-" call plug#begin()
-" 
-" call plug#end()
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+" Fzf
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-g> :GFiles<CR>
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-o> :Buffers<CR>
 
 " THEME
 
