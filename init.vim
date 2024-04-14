@@ -25,9 +25,11 @@ set inccommand=
 
 " SEARCHING
 
-" set path+=**
+set path+=**
 set wildmenu 
 set wildignorecase
+" set wildignore+=*/min/*,*/vendor/*,*/node_modules/*,*/bower_components/*,*.class
+set wildignore+=*/min/*,*/vendor/*,*/node_modules/*,*/bower_components/*,*/dist/*,*/.git/*,*/.gitlab/*,*/build/*,*/lib/*,*/bin/*,*.class
 
 " CLIPBOARD
 
@@ -49,17 +51,18 @@ set clipboard=unnamedplus
 " nnoremap <F9> :vimgrep /^[A-Z][A-Z\w]/
 " nnoremap <F9> :vimgrep /^\w[A-Z]\+/
 
-" Theme
-call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-call plug#end()
 
-" Fzf
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-g> :GFiles<CR>
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-o> :Buffers<CR>
+" " Plugins
+" call plug#begin()
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" call plug#end()
+
+" " Fzf
+" nnoremap <silent> <C-p> :Files<CR>
+" nnoremap <silent> <C-g> :GFiles<CR>
+" nnoremap <silent> <C-p> :Files<CR>
+" nnoremap <silent> <C-o> :Buffers<CR>
 
 " THEME
 
